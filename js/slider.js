@@ -8,9 +8,7 @@ $(function () {
 	elWrap = $('#slider'),
 	el =  elWrap.find('img');
 	function create () {
-		var Img = new Image(); 
-		Img.src= pathImg+indexImg+'.'+formatImg;						
-		$(Img).appendTo($("#slides"));
+		$('<img/>').attr('src', pathImg+indexImg+'.'+formatImg).appendTo($("#slides"));
 		$('<span class="next"></span><span class="prev"></span>').appendTo($("#slider"));
 		navigation();
 		check();
@@ -20,9 +18,7 @@ $(function () {
 		el.filter(':nth-child('+indexImg+')').fadeIn(500);
 	}
 	function newimg() {
-		nextImg = new Image(); 
-		nextImg.src= pathImg+indexImgLoad+'.'+formatImg;						
-		$(nextImg).appendTo($("#slides"));
+		$('<img/>').attr('src', pathImg+indexImgLoad+'.'+formatImg).appendTo($("#slides"));
 	}
 	function check() {
 		if (controlFlag && indexImgLoad <= countImg) {
@@ -36,7 +32,7 @@ $(function () {
 		}
 	}
 	function navigation(){
-		$('span.next').click(function() {
+		elWrap.find('span.next').click(function() {
 			indexImg++;
 			indexImgLoad++;
 			if(indexImg > countImg) {
@@ -45,7 +41,7 @@ $(function () {
 			check();
 			change();
 		});
-		$('span.prev').click(function() {
+		elWrap.find('span.prev').click(function() {
 			indexImg--;					
 			if(indexImg < 1) {
 				indexImg = countImg;
