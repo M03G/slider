@@ -1,0 +1,37 @@
+.slider_wrap {
+	margin: 0px auto 0;
+	width: 735px;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+}
+.slider_wrap img {
+	width: 645px;
+	height: auto;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 45px;	
+}
+.slider_wrap img:first-child {
+	display: block;
+}
+.slider_wrap span {
+	width: 45px;
+	height: 200px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(/img/rotator_buttons.png) no-repeat;
+	opacity: 0.7;
+}
+.slider_wrap span.next {
+	right: 0;
+	background-position: -45px 0;
+}
+.slider_wrap span.next:hover, span.prev:hover {
+	opacity: 1.0;
+}
+.slider_wrap span.prev {
+	background-position: 0 0;
+}
